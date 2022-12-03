@@ -7,6 +7,16 @@ let translation = "Translation";
 const input = document.querySelector("#input");
 const output = document.querySelector("#output");
 
+translate = {
+  englishToMorse: "true",
+  input: "",
+  output: "",
+};
+
+let e2m = translate.englishToMorse;
+let inputArr = 0;
+let outputArr = 0;
+
 transSwitch.addEventListener("click", function () {
   if (hasSwitched === false) {
     text1.innerHTML = "Morse Code";
@@ -17,34 +27,27 @@ transSwitch.addEventListener("click", function () {
     text2.innerHTML = "Morse Code";
     hasSwitched = false;
   }
-  let translation = input.value;
-  console.log(translation);
-  output.innerHTML = translation;
 });
 
-translate = {
-  englishToMorse: "true",
-  input: "egg",
-  output: "",
-};
+input.addEventListener("input", function () {
+  translate.input = input.value;
+  output.innerHTML = translate.input;
+  console.log(translate);
 
-let e2m = translate.englishToMorse;
-if (e2m === "true") {
-  e2m = true;
-} else {
-  e2m = false;
-}
-console.log(e2m);
+  inputArr = translate.input.split("");
+  console.log(inputArr);
 
-let translateInput = translate.input.split("");
-console.log(translateInput);
-
-let translatedOutput = translateInput;
-console.log(translatedOutput);
+  // if translating english to morse
+  if (e2m === "true") {
+    // if translating morse to english
+  } else {
+  }
+});
 
 // function to translate
 const translateIt = () => {
   if (e2m === true) {
+    inputArr.filter();
   } else {
   }
 };

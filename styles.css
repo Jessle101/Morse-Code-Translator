@@ -58,3 +58,7 @@ footer {
   justify-content: space-evenly;
   align-items: center;
 }
+
+#output {
+  color: red;
+}
